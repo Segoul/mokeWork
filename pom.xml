@@ -59,7 +59,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-			<scope>test</scope>
 		</dependency>
 		
 		<!-- 自动构造对象 -->
