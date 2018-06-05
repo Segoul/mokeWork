@@ -4,9 +4,10 @@ import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.github.pagehelper.PageInfo;
 import com.moke.mokeWork.bean.dto.sysRegion.InsertRegionDto;
@@ -25,7 +26,7 @@ import io.swagger.annotations.ApiOperation;
  *
  */
 
-@RestController
+@Controller
 @RequestMapping("/sysRegion")
 public class SysRegionController extends BaseController {
 
@@ -39,6 +40,7 @@ public class SysRegionController extends BaseController {
 	 */
 	@ApiOperation(value = "根据父ID查询地域信息",httpMethod = "GET", notes="根据父ID查询地域信息")
     @RequestMapping(value = "/queryRegionByParentId", method = RequestMethod.GET)
+	@ResponseBody
 	public ResultData queryRegionByParentId(Long parentId){
 		
 		//验证参数
@@ -58,6 +60,7 @@ public class SysRegionController extends BaseController {
 	 */
 	@ApiOperation(value = "根据地域ID查询地域信息",httpMethod = "GET", notes="根据地域ID查询地域信息")
     @RequestMapping(value = "/queryRegionById", method = RequestMethod.GET)
+	@ResponseBody
 	public ResultData queryRegionById(Long regionId){
 		
 		//验证参数
@@ -77,6 +80,7 @@ public class SysRegionController extends BaseController {
 	 */
 	@ApiOperation(value = "根据地域类型分页查询地域信息",httpMethod = "POST", notes="根据地域类型分页查询地域信息")
     @RequestMapping(value = "/queryRegionByTypePage", method = RequestMethod.POST)
+	@ResponseBody
 	public ResultPage queryRegionByTypePage(QueryRegionByTypePageDto form){
 		
 		//验证参数
@@ -106,6 +110,7 @@ public class SysRegionController extends BaseController {
 	 */
 	@ApiOperation(value = "根据地域ID查询删除地域信息",httpMethod = "GET", notes="根据地域ID查询删除地域信息")
     @RequestMapping(value = "/deleteRegionById", method = RequestMethod.GET)
+	@ResponseBody
 	public ResultData deleteRegionById(Long regionId){
 		
 		//验证参数
@@ -135,6 +140,7 @@ public class SysRegionController extends BaseController {
 	 */
 	@ApiOperation(value = "新增地域信息",httpMethod = "POST", notes="新增地域信息")
     @RequestMapping(value = "/insertRegion", method = RequestMethod.POST)
+	@ResponseBody
 	public ResultData insertRegion(InsertRegionDto form){
 		
 		//验证参数
